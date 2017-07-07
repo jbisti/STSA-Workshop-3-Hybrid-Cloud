@@ -245,6 +245,7 @@ The flow accepts a GET request, and uses the information in the GET querystring 
 
 What you see is probably not what you expect.
 ![Architecture Overview](/images/store-lookup-debug.png)
+
 As you can see in the debug panel there is an error "No url specified". This is because the "HTTP Node" is not configured properly.
 
 - Double click on the **Store Lookup"** node
@@ -461,7 +462,7 @@ Copy and paste the code for Exercise #2 below your existing services and take a 
 
 Following the flow from left to right. We have an "HTTP In" (Translate Name/Number) node, which we can view as an API endpoint for others to call. 
 There are also two Test Inject buttons "(generator)" and "(19645922)" which you can use to easily debug your code. These simulate the API being called.
-The basic principle of this API is to allow the user to send an "itemID" and get a "product name" in response. or sent a "product name" and get an "ItemID" in response.
+The basic principle of this API is to allow the user to send an "itemID" and get a "product name" in response. Or set a "product name" and get an "ItemID" in response.
 
 Remember we have to ultimately call an API on zOS that looks like:
 
@@ -496,7 +497,7 @@ i.e. http://mvs1.centers.ihost.com:50200/resources/ecs/IBM/demo/poughkeepsieny_8
 The "isNumerical" node is a **switch** node which allows for the flow to change based on the conditions defined in the switch node details.
 ![Architecture Overview](/images/isnumerical-node.png)
 
-As you can see in the image below where are two conditions in he "switch node".
+As you can see in the image below where are two conditions in the "switch node".
 ![Architecture Overview](/images/isnumerical-node-details.png)
 
 The first condition evaluated is that a number value between 0 and 9999999 is stored in msg.payload.
@@ -527,7 +528,7 @@ So now we want to create the URL by using the "Mustache" syntax.
 
 This will take the "store_prefix" JSON value and the "payload" JSON value and add it to the end of the URL. We now need to add the http request to invoke the URL.
 
-Drag the **http request** node from the pallet to the flow editor.
+Drag the **http request** node from the palette to the flow editor.
 
 ![Architecture Overview](/images/http-request-node.png)
 
@@ -1139,7 +1140,7 @@ Node-RED does not export user credentials when you import/export, so you’ll ha
 These are not your w3 credentials, but the username/password specific to the Weather Channel Data service, which you’ll create in the next step.
 
 Go to bluemix.net and head over to Catalog, which will show you the list of services available. 
-Find “Weather Company Data”, under Data & Analytics. Click ont he tile to create the service
+Find “Weather Company Data”, under Data & Analytics. Click on the tile to create the service
 
 ![Architecture Overview](/images/bluemix-weather-tile.png)
 
@@ -1182,7 +1183,7 @@ Right now, the page is only showing five items, but the inventory actually has t
 umbrella, generator, rainjacket, flashlight, batteries, bucket, sumppump, boots, ducttape, water.
 
 ## Exercise 4:
-We need to highlight the weather-related items that are below recommended inventory levels prior to a rainy day. You may notice the "Check Weather Status" and "Check Reorder Status" nodes, which are Switch statements. Use these to determine first, if the probability of rain is above a certain value (your choosing), and if so, then check to see if the current inventory is below the "Minimum Stock" value. If both of these evaluate to true, route the flow through the "Add Rain Icon" node, otherwise, continue the flow to the "Join" node below.
+We need to highlight the weather-related items that are below recommended inventory levels prior to a rainy day. You may notice the "Check Weather Status" and "Check Reorder Status" nodes, which are Switch statements. Use these to determine first, if the probability of rain is above a certain value (your choosing), and if so, then check to see if the current inventory is below the "Minimum Stock" value. If both of these evaluate to true, route the flow through the "Add Rain Icon" node, otherwise, continue the flow to the "Join" node below. You will probably also want to try out different cities with more interesting weather.
 ![Architecture Overview](/images/two_switch_nodes.png)
 
 
